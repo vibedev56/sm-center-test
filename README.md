@@ -1,6 +1,6 @@
 # Тестовое задание для кандидата.
 
-https://app.netlify.com/sites/sm-center-test/configuration/general
+https://sm-center-test.netlify.app/profile
 
 Необходимо создать приложение на Vue.js 3 + TypeScript с использованием Vuex, Vue Router и Sass/SCSS, реализующее генератор форм.
 Технические требования:
