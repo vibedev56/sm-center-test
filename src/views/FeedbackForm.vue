@@ -124,7 +124,7 @@ const handleFileChange = (event: Event) => {
       submit-button-text="Отправить"
       cancel-button-text="Очистить"
     >
-      <template #field-attachFile="{ field }">
+      <template #field-attachFile>
         <div class="file-upload-field">
           <div class="checkbox-container">
             <label class="checkbox-label">

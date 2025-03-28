@@ -10,34 +10,38 @@ const formData = ref({
 })
 
 const formConfig = {
-  name: {
-    type: 'input',
-    label: 'Полное имя',
-    attrs: { 
-      placeholder: 'Иван Иванов',
-      required: true
+  formSchema: {
+    name: {
+      type: 'input',
+      label: 'Имя',
+      attrs: {
+        placeholder: 'Введите имя',
+        required: true
+      }
+    },
+    age: {
+      type: 'select',
+      label: 'Возрастная группа',
+      options: [
+        { value: '18-25', label: '18-25 лет' },
+        { value: '26-35', label: '26-35 лет' },
+        { value: '36+', label: '36 и старше' }
+      ]
+    },
+    bio: {
+      type: 'textarea',
+      label: 'Биография',
+      attrs: {
+        rows: 5,
+        maxlength: 500
+      }
+    },
+    newsletter: {
+      type: 'checkbox',
+      label: 'Подписаться на рассылку'
     }
   },
-  age: {
-    type: 'select',
-    label: 'Возрастная группа',
-    options: [
-      { value: '18-25', label: '18-25 лет' },
-      { value: '26-35', label: '26-35 лет' },
-      { value: '36+', label: '36 и старше' }
-    ]
-  },
-  bio: {
-    type: 'textarea',
-    label: 'Биография',
-    attrs: {
-      rows: 5,
-      maxlength: 500
-    }
-  },
-  newsletter: {
-    type: 'checkbox',
-    label: 'Подписаться на рассылку'
+  modelValue: {
   }
 }
 
@@ -59,7 +63,7 @@ const handleCancel = () => {
   <div class="profile-container">
     <h2>Редактирование профиля</h2>
     <FormGenerator
-      :fields="formConfig"
+      :fields="formConfig.formSchema"
       v-model="formData"
       @save="handleSubmit"
       @cancel="handleCancel"
